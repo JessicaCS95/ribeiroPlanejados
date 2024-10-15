@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/styles.css" />
+    <title>Ribeio Planejados - Login</title>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    
+    <script src="js/script.js" defer></script>
+    
+  </head>
+
+  <body>
+    <header>
+      <div class="container">
+        <div class="logoheader">
+          <img class="imglogoheader" src="img/logo_header.png" alt="logo" />
+        </div>
+        <div id="menuButton">
+          <i id="burguer" class="material-icons" onclick="menuShow()">menu</i>
+        </div>
+      </div>
+      <nav id="menu" class="cabecalho">
+        <div class="menu1"><a href="#">QUEM SOMOS</a></div>
+        <div class="menu2"><a href="#">CATÁLOGO</a></div>
+        <div class="menu3"><a href="#">PORTFÓLIO</a></div>
+        <div class="menu4"><a href="#">ORÇAMENTO</a></div>
+        <div class="menu5"><a href="#">BLOG</a></div>
+
+        <div class="pesquisa">
+          <img src="img/lupa.png" class="lupa" alt="Buscar" />
+          <input type="text" class="txtbusca" placeholder="Buscar..." />
+        </div>
+        <div class="perfil">
+          <a href="#"><img src="./img/perfil.png" class="iconperfil" /></a>
+        </div>
+      </nav>
+
+      <div class="menu-mobile">
+        <ul>
+          <li class="nav-item"><a href="#">LOGIN / CADASTRO</a></li>
+          <li class="nav-item"><a href="#">QUEM SOMOS</a></li>
+          <li class="nav-item"><a href="#">CATÁLOGO</a></li>
+          <li class="nav-item"><a href="#">PORTFÓLIO</a></li>
+          <li class="nav-item"><a href="#">ORÇAMENTO</a></li>
+          <li class="nav-item"><a href="#">BLOG</a></li>
+        </ul>
+      </div>
+    </header>
+
+    <div class="buttonzap">
+      <a
+        href="https://api.whatsapp.com/send?phone=SEUNUMERO"
+        class="icon"
+        target="_blank"
+      >
+        <i class="fab fa-whatsapp"></i>
+      </a>
+    </div>
+
+    <div class="fundomadeira">
+        <div class="textoh1">
+            <h1>Login</h1>
+        </div>
+
+    </div>
+
+    <main>
+        <form action="#" method="post">
+        <div class="email-login">
+          <div class="email-login2">
+            <label for="email-Login">E-mail:</label>
+            <input type="email" name="email-login" class="email-login3" id="email-login" />
+          </div>
+
+          <div class="senha-login">
+            <label for="login-senha">Senha</label>
+            <input type="password" name="verificaSenha" class="login-senha" id="login-senha" />
+            <i class="bi bi-eye-fill" id="eye-senha" onclick="mostrarSenha()"></i>
+            
+            
+          </div>
+          <div>
+            <a class="rec-senha" href="#">Esqueceu sua senha?</a>
+          </div>
+        </div>
+        <div class="login">
+        <input type="submit" value="LOGIN" class="logar" id="botaoLogin" onclick="logar()" />
+      </div>
+      </form>
+
+      <div class="fieldset">
+        <fieldset>
+          <legend>ou</legend>
+        </fieldset>
+      </div>
+
+      <div>
+        <a href="">
+          <img
+            src="./img/Google_Icons-09-512.webp"
+            alt=""
+            class="logo-google"
+          />
+        </a>
+
+        <a href="">
+          <img
+            src="./img/facebook-logo-facebook-icon-transparent-free-png.webp"
+            alt=""
+            class="facebook-logo"
+          />
+        </a>
+      </div>
+
+      <div>
+        <div class="fimform">
+          <a class="cadastre-se" href="cadastro">CADASTRE-SE</a>
+          
+        </div>
+      </div>
+    </main>
+
+    <footer>
+      <div class="fundo">
+        <div class="logofooter">
+          <img
+            src="img/logo_footer.png"
+            alt="Logo na horizontal"
+            width="100%"
+          />
+        </div>
+
+        <div>
+          <p class="contatos">CONTATOS</p>
+          <div>
+            <p class="email">
+              <img src="img/email.png" alt="Ícone e-mail" class="icone" />
+              <a href="mailto:marcenariazequinha@yahoo.com.br" class="mailto"
+                >ribeiroplanejados@gmail.com.br</a
+              >
+            </p>
+
+            <p class="tel">
+              <img src="img/tel.png" alt="Ícone telefone" class="icone" />
+              (11)98109-4528
+            </p>
+          </div>
+        </div>
+
+        <div>
+          <p class="endereco">ENDEREÇO</p>
+          <div>
+            <address class="local">Av. Alcântara Machado, 2293</address>
+            <address class="local">São Paulo, SP, 03101-001</address>
+          </div>
+        </div>
+
+        <div>
+          <p class="pag">FORMAS DE PAGAMENTO</p>
+          <div class="imgpagamento">
+            <img
+              src="img/formapag.png"
+              alt="formas de pagamento"
+              width="250rem"
+            />
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
