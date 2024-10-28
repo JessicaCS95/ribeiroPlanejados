@@ -57,8 +57,8 @@ app.post('/cadastro', function (req, res) {
     var email_cliente= req.body.email_cliente;
     var celular_cadastro = req.body.celular_cadastro;
     var senha_cadastro = req.body.senha_cadastro;
-    var  novidades_email = req.body. novidades_email;
-    var  novidades_sms = req.body. novidades_sms;
+    var  novidades_email = req.body. novidades_email ? 1 : 0;
+    var  novidades_sms = req.body. novidades_sms ? 1 : 0;
 
     conexao.connect(function (error) {
         if (error) throw error;

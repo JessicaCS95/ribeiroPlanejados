@@ -92,4 +92,16 @@ window.onload = function () {
 
 document.getElementById('email-login').focus();
 
+//blog
+function toggleText(id) {
+    var textBox = document.getElementById(id);
+    if (textBox.style.display === "none" || textBox.style.display === "") {
+        textBox.style.display = "block";
+    } else {
+        textBox.style.display = "none";
+    }
+}
+
+
+
 
