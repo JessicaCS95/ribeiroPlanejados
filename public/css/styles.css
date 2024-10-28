@@ -6,14 +6,15 @@
   padding: 0;
   box-sizing: border-box;
   text-decoration: none;
+  font-family: "Open Sans", sans-serif;
 }
 
 body {
   margin: 0;
   padding: 0;
   background-color: #d4ccb4;
-  font-family: "Open Sans", sans-serif;
 }
+
 
 /* Menu Navegação */
 
@@ -21,32 +22,48 @@ header {
   top: 0;
   left: 0;
   width: 100%;
-  background-color: #a47c4c;
-  padding: 0.4rem 0;
+  background-color:#d4ccb4;
+  padding: 1rem 0 3rem 0;
   display: flex;
   flex-direction: row;
+  
 }
 
 i#burguer {
   display: none;
 }
 
+
+.container{
+  display: none;
+}
+
 .cabecalho {
+  background-color:#2c1c04;
   display: flex;
   flex-direction: row;
   font-family: "Montserrat", "Courier New", Courier, monospace;
   font-weight: bold;
   align-items: center;
+  margin: auto;
+  box-shadow: 1px 1px 5px 1px #2c1c04 ;
+  padding: 0 0 0 14rem;
   width: 100%;
 }
 
 .logoheader {
+  display: flex;
   margin: 1%;
 }
 
-.logoheader img {
-  width: 12.5rem;
-  height: 6.25rem;
+.imglogoheader {
+  display: flex;
+  position: absolute;
+  margin: auto;
+  width: 12rem;
+  height: 6rem;
+  box-shadow: 3px 3px 3px 1px #2c1c04;
+  border: #2c1c04 solid 0.5px;
 }
 
 .menu1,
@@ -59,42 +76,32 @@ i#burguer {
   text-align: center;
 }
 
-.cabecalho a {
+.cabecalho .a {
   text-decoration: none;
-  color: #2c1c04;
+  color: #d4ccb4;
   font-size: 1rem;
   white-space: nowrap;
+  padding: 3% 5%;
 }
 
-.pesquisa {
-  background-color: #d4ccb4;
-  border: solid #d4ccb4 0.2rem;
-  border-radius: 0.625rem;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin: auto;
-  width: 20%;
-}
-
-.txtbusca {
-  background-color: transparent;
-  border: none;
-  min-width: 9.375rem;
-  width: 100%;
-}
-
-.lupa {
-  width: 1.5rem;
+.cabecalho .a:hover{
+  color: #a47c4c;
 }
 
 .perfil {
   margin: auto;
+  
 }
 
 .iconperfil {
-  width: 4rem;
+  width: 3rem;
+  margin-right: 20px;
 }
+
+.iconperfil:hover{
+  content: url(../img/perfil_hover.png);
+}
+
 
 .open-login-cadastro{
   display: none;
@@ -171,81 +178,196 @@ main {
   padding: 1rem;
   max-width: 37.5rem;
   margin: auto;
+  width: 100%;
+
 }
 
 /* Home */
 
-/* Slider */
+/* Banner */
 
-section.slider{
-  margin: 0 auto;
+.carousel-caption {
+  position: absolute;
+  display: flex;
+}
+
+.btnorcamento{
+  display: flex;
+  z-index: 50;
+  padding: 0.8%;
+  border-radius: 13px;
+  border: none;
+  cursor: pointer;
+  font-family: "Montserrat", "Courier New", Courier, monospace;
+  font-size: 1rem;
+  font-weight: bold;
+  background-color:#d4ccb4;
+  color:#2c1c04;
+}
+
+.btnorcamento:hover{
+  background-color: #a47c4c;
+  color: #d4ccb4;
+}
+
+.corfundo{
+  background-color: #d4ccb4;
+  margin: 0;
+  
+}
+
+
+
+.faixinhaEntrega{
+  display: flex;
+  background-color:#d4ccb4;
   width: 100%;
-  height: auto;
-  padding: 0 !important;
+}
+
+.frete-faixa {
+  color: #a47c4c;
+  text-align: center;
+  padding: 3%;
+  position: relative;
+  width: 100%;
+  font-size: 1.5rem;
   overflow: hidden;
 }
 
-.slider-banner{
-  width: 400%;
-  height: auto;
+.content {
   display: flex;
+  justify-content:left;
+  align-items:center;
+  animation: mover 12s linear infinite;
+  
 }
 
-.slider-banner input{
-   display: none; 
+@keyframes mover {
+  0% { transform: translateX(-50rem); }
+  100% { transform: translateX(93.75rem); }
 }
 
-.slider-box{
-  width: 25%;
-  height: auto;
-  position: relative;
-  text-align: center;
+.caminhao {
+  width: 2.5rem;
+  margin-right: 0.625rem;
 }
 
-.slider-box img{
+.frete-faixa span {
+  font-weight: bold;
+  margin-right: 0.625rem;
+  white-space: nowrap;
+}
+
+
+/* Decorados */
+     
+
+.decorados{
+  display: flex;
   width: 100%;
+  background-color:#d4ccb4;
 }
 
-.nav-manual, .nav-auto{
+.flip-card {
+  background-color: transparent;
+  width: 50%;
+  height: 18.75rem;
+  perspective: 62.5rem; 
+  margin: auto;
+}
+
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 1s;
+  transform-style: preserve-3d;
+}
+
+
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+
+.flip-card-front, .flip-card-back {
   position: absolute;
   width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden; 
+  backface-visibility: hidden;
+}
+
+
+
+.flip-card-front img {
+  width: 100%;
+  height: 18.75rem;
+  padding: 1%;
+}
+
+
+.flip-card-back {
   display: flex;
-  justify-content: center;
-}
-
-.nav-manual .manual-btn, .nav-auto div{
-  border: 1px solid #2c1c04;
-  padding: 10px;
-  border-radius:50%;
-  cursor: pointer;
-  transition: 0.2s;
-}
-
-.nav-manual .manual-btn:not(:last-child), .nav-auto div:not(:last-child){
-  margin-right: 10px;
-}
-
-
-.nav-manual .manual-btn:hover{
+  width: 100%;
+  height: 100%;
   background-color:#2c1c04;
+  color: #d4ccb4;
+  transform: rotateY(180deg);
 }
 
-#banner1:checked ~ .nav-auto .auto-btn1{
-  background-color: #2c1c04;
-}
-
-#banner1:checked ~ .nav-auto .auto-btn2{
-  background-color: #2c1c04;
-}
-
-#banner1:checked ~ .nav-auto .auto-btn3{
-  background-color: #2c1c04;
+.flip-card-back h1{
+font-size: 1.8rem;
+margin: auto;
+font-family: "Montserrat", "Courier New", Courier, monospace;
+padding: 1%;
+white-space: nowrap;
 }
 
 
 
+/* Avaliação Clientes */
 
-/* Main Cadastro */
+.avaliacaoClientes{
+  background-color:#d4ccb4;
+  padding: 3% 0;
+}
+
+.clientes{
+  color: #2c1c04;
+  font-size: 1.8rem;
+  font-weight: bold;
+  white-space: nowrap;
+  text-align: center;
+  width: 100%;
+  
+}
+
+.avaliacoes{
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content:space-around;
+  margin: 3rem 0;
+  background-color:#d4ccb4;
+  
+}
+
+.av1, .av2, .av3{
+  width: 98%;
+}
+
+#carouselExampleSlidesOnly{
+  display: none;
+}
+
+/* Quem Somos */
+
+
+
+/* Cadastro */
 
 form {
   display: flex;
@@ -369,6 +491,123 @@ fieldset {
   color: #a37c4c;
 }
 
+/* Main Login */
+.textoh2 {
+  text-align: center;
+  color: #888168;
+  font-family: "Montserrat";
+  margin-top: 2rem;
+}
+
+.rec-senha {
+  color: #a47c4c;
+  text-decoration: underline;
+}
+
+.login {
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+  width: 100%;
+}
+
+.login input {
+  width: 30%;
+  margin-left: 70%;
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: #a47c4c;
+  color: #fff;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.logo-google,
+.facebook-logo {
+  height: 4rem;
+  width: 4rem;
+  margin-left: 25%;
+}
+
+.cadastre-se {
+  margin-bottom: 30%;
+  width: 100%;
+  padding: 0.5rem;
+  border-radius: 4px;
+  background-color: #a47c4c;
+  color: #fff;
+  font-size: 1rem ;
+  font-weight: bold;
+  text-align: center  ;
+  cursor: pointer;
+}
+
+/* Main */
+main {
+  font-family: "Open Sans";
+  color: #a37c4c;
+  font-size: 1.25rem;
+  padding: 1rem;
+  max-width: 37.5rem;
+  margin: auto;
+}
+
+/* Blog */
+
+.blog {
+  text-align: center;
+  padding: 50px 20px;
+}
+
+.blog h2 {
+  font-family: "Montserrat";
+  font-weight: bold;
+  font-size: 36px;
+  margin-bottom: 30px;
+  color: #2c1c04;
+}
+
+.blog-post {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #f3ebd3;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 50px rgba(5, 5, 5, 5.1);
+  margin-bottom: 20px;
+  transition: background-color 0.3s ease;
+  cursor: pointer;
+  width: 80%;
+  margin: 20px auto;
+}
+
+.blog-post img {
+  max-width: 100%;
+  border-radius: 8px;
+  margin-bottom: 15px;
+}
+
+.blog-post p {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.text-box {
+  display: none;
+  background-color:#a47c4c;
+  text-align: justify;
+  padding: 10px;
+  margin-top: 10px;
+  border-radius: 8px;
+}
+
+.text-box p {
+  font-size: 16px;
+  color: #2c1c04;
+}
+
 /* Footer */
 .fundo {
   display: flex;
@@ -388,8 +627,7 @@ fieldset {
 }
 
 .contatos,
-.endereco,
-.pag {
+.endereco{
   display: flex;
   flex-direction: column;
   font-size: 1.1rem;
@@ -400,7 +638,7 @@ fieldset {
   display: flex;
   flex-direction: row;
   width: 100%;
-  font-size: 0.9rem;
+  font-size: 1.2rem;
   justify-content: left;
 }
 
@@ -409,14 +647,9 @@ fieldset {
   color: inherit;
 }
 
+
 .mailto:hover {
   text-decoration: underline;
-}
-
-.pag {
-  margin-top: 1.8rem;
-  margin-bottom: 0;
-  white-space: nowrap;
 }
 
 .contatos,
@@ -426,12 +659,14 @@ fieldset {
 
 address {
   white-space: nowrap;
-  font-size: 0.9rem;
+  font-size: 1.2rem;
 }
 
 .icone {
   width: 1.2rem;
 }
+
+/* WhatsApp */
 
 .icon {
   position: fixed;
@@ -461,110 +696,85 @@ address {
   box-shadow: 0.125rem 0.125rem 1.25rem #5fe690;
 }
 
-/* Main Login */
-.textoh2 {
-    text-align: center;
-    color: #888168;
-    font-family: "Montserrat";
-    margin-top: 2rem;
-  }
-  
-  .rec-senha {
-    color: #a47c4c;
-    text-decoration: underline;
-  }
-  
-  .login {
-    display: flex;
-    justify-content: center;
-    margin-top: 1rem;
-    width: 100%;
-  }
-  
-  .login input {
-    width: 30%;
-    margin-left: 70%;
-    padding: 0.5rem;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    background-color: #a47c4c;
-    color: #fff;
-    font-weight: bold;
-    cursor: pointer;
-  }
-  
-  .logo-google,
-  .facebook-logo {
-    height: 4rem;
-    width: 4rem;
-    margin-left: 25%;
-  }
-  
-  .cadastre-se {
-    margin-bottom: 30%;
-    width: 100%;
-    padding: 0.5rem;
-    border-radius: 4px;
-    background-color: #a47c4c;
-    color: #fff;
-    font-size: 1rem ;
-    font-weight: bold;
-    text-align: center  ;
-    cursor: pointer;
-  }
-
+  /* Quem Somos */
   
 
+@media screen and (max-width: 1500px) {
+ 
+  /* Decorados */
+
+  .flip-card-back h1{
+    font-size: 1.2rem;
+  }
+
+  /* footer */
+
+.contatos,
+.endereco{
+  font-size: 1rem;
+}
+
+.email,
+.tel {
+  font-size: 0.9rem;
+}
+
+.local{
+  font-size: 0.9rem;
+}
+}
+
+@media screen and (max-width: 1000px) {
+
+   /* Menu-Mobile */
+   header {
+    padding: 0;
+  }
+   
+
+   .imglogoheadermobile{
+    width: 35%;
+    
+   }
   
-
-@media only screen and (max-width: 1000px) {
-  header {
-    width: 100%;
-    display: flex;
-  }
-
-  .container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-  }
-
-  .logoheader img {
-    width: 170px;
-    height: 85px;
-  }
-
-  .cabecalho-mobile {
+   .container{
     display: flex;
     width: 100%;
+    height: 100%;
+   }
+
+   .d-block{
+    height: 15rem;
+    width: 100%;
+  }
+
+  #menuButton{
+    display: flex;
+    margin: auto;
   }
 
   i#burguer {
     display: flex;
     color: #2c1c04;
-    padding: 1%;
     cursor: pointer;
-    font-size: 3rem;
+    font-size: 2.3rem;
   }
 
-  i#burguer:hover {
-    zoom: 105%;
-  }
 
   .menu-mobile {
     position: absolute;
-    background-color: #a47c4c;
-    top: 12%;
+    background-color: #d4ccb4;
+    top: 11%;
     left: 0;
     width: 100%;
-    z-index: 1;
+    z-index: 100;
   }
 
   .menu-mobile ul {
     display: flex;
     flex-direction: column;
     text-align: center;
+    
   }
 
   .menu-mobile .nav-item {
@@ -581,12 +791,16 @@ address {
     font-weight: bold;
   }
 
+  .nav-item{
+    z-index: 1;
+  }
+
   .nav-item a {
     transition: 1s;
   }
 
   .nav-item a:hover {
-    background-color: #2c1c04;
+    background-color: #a47c4c;
     color: #d4ccb4;
     padding: 5px 10px;
     border-radius: 7px;
@@ -594,30 +808,54 @@ address {
 
   .open {
     display: block;
+    
   }
-
 
   .cabecalho {
     display: none;
   }
 
-  .cpfedata {
+
+  /* Banner Carrossel */
+  .btnorcamento{
+    font-size: 0.8rem;
+    padding: 1%;
+  }
+
+  .logoheader{
+    display: none;
+   }
+ 
+
+/* Decorados */
+
+  .decorados{
+    display: flex;
     flex-direction: column;
-    gap: 0.5rem;
+    padding: 1%;
+    
   }
 
-  .cpf,
-  .datanasc {
-    width: 100%;
-  }
-
-  .fimform input {
-    width: 100%;
-  }
+  /* Footer */
 
   .fundo {
     flex-direction: column;
   }
+
+.contatos,
+.endereco{
+  font-size: 1.3rem;
+}
+
+.email,
+.tel {
+  font-size: 1.1rem;
+}
+
+.local{
+  font-size: 1.1rem;
+}
+
 
   .logofooter {
     width: 35%;
@@ -643,6 +881,122 @@ address {
 
   .icone {
     margin: 0;
+  }
+  
+}
+
+@media only screen and (max-width: 768px) {
+
+  /* Banner Carrossel */
+
+  .btnorcamento{
+    font-size: 0.6rem;
+    padding: 2%;
+  }
+
+  /* Form Cadastro */
+
+  .cpfedata {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .cpf,
+  .datanasc {
+    width: 100%;
+  }
+
+  .fimform input {
+    width: 100%;
+  }
+
+  
+
+  /* Faixinha entrega */
+
+ .frete-faixa {
+  font-size: 1rem;
+}
+  .caminhao{
+    width: 2rem;
+    height: 2rem;
+  }
+
+  .content {
+    display: flex;
+    justify-content: flex-start;
+    align-items:center;
+    animation: mover 12s linear infinite;
+  }
+
+  @keyframes mover {
+
+    0% { transform: translateX(-25rem); }
+    100% { transform: translateX(40rem); }
+  }
+
+
+  /* Decorados */
+
+  .decorados{
+    overflow: hidden;
+  }
+
+  .flip-card-front img {
+    width: 28rem;
+    height: 15.75rem;
+    
+  }
+
+  .flip-card {
+    width: 31rem;
+    width: 28rem;
+    height: 15.75rem;
+  }
+  
+  .flip-card-back h1{
+    font-size: 1.2rem;
+    }
+
+  /* Avaliação Clientes */
+
+  .avaliacaoClientes{
+    width: 100%;
+    padding: 5% 0 ;
+  }
+
+  .clientes{
+    margin: 10% 0;
+    font-size: 1.3rem;
+  }
+
+  #carouselExampleSlidesOnly{
+    display: block;
+    margin: auto;
+    margin-bottom: 3rem;
+    width: 80%;
+  }
+
+  .avaliacoes{
+    display: none;
+  }
+
+ 
+
+  /* Quem Somos */
+  
+
+  /* Footer */
+
+  .logofooter {
+    width: 50%;
+  }
+
+}
+
+@media screen and (max-width: 1000px){
+  .menu-mobile{
+    top: 7%;
   }
 }
 

@@ -1,11 +1,188 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Quem Somos</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" /> <!-- Menu-Hambuerguer -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"> <!-- WhatsApp -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"> <!-- eye-senha -->
+    <script src="js/script.js" defer></script>
+    <title>Ribeiro Planejados</title>
+    
+    
 </head>
+
 <body>
-    <h1>Quem Somos</h1>
+    <header>
+         <!-- WhatsApp -->
+    <div class="buttonzap">
+        <a href="https://api.whatsapp.com/send?phone=SEUNUMERO" class="icon" target="_blank">
+            <i class="fab fa-whatsapp"></i>
+        </a>
+    </div>
+
+    <div class="logoheader"> <a href="/"><img class="imglogoheader" src="img/logo_header.png" alt="logo"></a>
+    </div>
+    
+        <!-- Menu Principal -->
+         
+        <nav id="menu" class="cabecalho">
+    
+            <div class="menu1"><a class="a" href="quemsomos">Quem Somos</a></div>
+            <div class="menu2"><a class="a" href="catalogo">Catálogo</a></div>
+            <div class="menu3"><a class="a" href="portfolio">Portfólio</a></div>
+            <div class="menu4"><a class="a" href="orcamento">Orçamento</a></div>
+            <div class="menu5"><a class="a" href="blog">Blog</a></div>
+
+            
+            <div class="perfil"><a href="#"><img src="./img/perfil.png" class="iconperfil"></a></div>
+        </nav>
+
+        
+
+         <!-- Menu Mobile -->
+
+         <div class="container">
+          
+          <a href="/"><img class="imglogoheadermobile" src="img/logo_header.png" alt="logo"></a>
+          
+
+            <div id="menuButton"><i id="burguer" class="material-icons" onclick="menuShow()">menu</i></div>
+
+          
+        </div>
+
+        <div class="menu-mobile">
+            <ul>
+                <li class="nav-item"><a href="login">LOGIN </a> <a href="cadastro"> / CADASTRO</a></li>
+                <li class="nav-item"><a href="quemsomos">QUEM SOMOS</a></li>
+                <li class="nav-item"><a href="catalogo">CATÁLOGO</a></li>
+                <li class="nav-item"><a href="portfolio">PORTFÓLIO</a></li>
+                <li class="nav-item"><a href="orcamento">ORÇAMENTO</a></li>
+                <li class="nav-item"><a href="blog">BLOG</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <div class="fundomadeira">
+        <div class="textoh1">
+            <h1>Quem Somos</h1>
+        </div>
+
+    </div>
+
+        <section class="container">
+
+            <img src="/projeto_integrador/img/planofundo.png" alt="">
+            <article>
+                
+
+                    <p class="description">A <strong>Ribeiro Planejados</strong> nasceu do talento de José Ribeiro na arte
+                        da marcenaria, uma
+                        jornada que começou
+                        aos 17 anos no interior do Maranhão, inspirado por seu pai. Com mais de três décadas de experiência,
+                        nossa empresa é sinônimo de excelência em móveis planejados, feitos sob medida para atender às
+                        necessidades e ao estilo de vida de nossos clientes. </p>
+
+    
+                    <p class="description">Seja para residências ou estabelecimentos comerciais, cada projeto é tratado com
+                        dedicação,
+                        combinando funcionalidade e estética. Nosso compromisso é transformar espaços com peças únicas,
+                        sempre respeitando a personalidade e o desejo de cada um.</p>
+                
+            </article>
+        </section>
+
+        <section class="valores">
+
+            <div class="valores__divs">
+                <h1>Missão</h1>
+                <img src="/projeto_integrador/img/missao.png" alt="">
+                <p>Oferecer móveis planejados de alta qualidade, personalizados para cada cliente, combinando
+                    funcionalidade e design para transformar ambientes com peças exclusivas.</p>
+            </div>
+
+            <div class="valores__divs">
+                <h1>Visão</h1>
+
+                <img src="img/visao.png" alt="">
+
+                <p>Ser referência no mercado de móveis planejados, reconhecida pela excelência no atendimento e pela
+                    inovação em design e funcionalidade, expandindo nossa presença em todo o Brasil.</p>
+            </div>
+
+            <div class="valores__divs">
+                <h1>Valores</h1>
+
+                <img src="/projeto_integrador/img/valores (1).png" alt="">
+
+               
+
+                <ul>
+                    <li>Dedicação ao cliente</li>
+                    <li> Qualidade e precisão</li>
+                    <li> Criatividade e inovação</li>
+                    <li> Sustentabilidade</li>
+                    <li>tica e respeito</li>
+                </ul>
+
+            </div>
+        </section>
+
+
+     <!-- Footer -->
+    <footer>
+        <div class="fundo">
+            <div class="logofooter">
+                <img src="img/logo_footer.png" alt="Logo na horizontal" width="100%">
+            </div>
+
+
+            <div>
+                <p class="contatos">CONTATOS</p>
+                <div>
+                    <p class="email"> <img src="img/email.png" alt="Ícone e-mail" class="icone"> <a
+                            href="mailto:marcenariazequinha@yahoo.com.br"
+                            class="mailto">ribeiroplanejados@gmail.com.br</a> </p>
+
+                    <p class="tel">
+                        <img src="img/tel.png" alt="Ícone telefone" class="icone"> (11)98109-4528
+                    </p>
+
+                </div>
+            </div>
+
+            <div>
+                <p class="endereco">ENDEREÇO</p>
+                <div>
+                    <address class="local"> Av. Alcântara Machado, 2293
+                    </address>
+                    <address class="local">São Paulo, SP, 03101-001 </address>
+
+
+                </div>
+            </div>
+
+            <div>
+                <div class="imgpagamento">
+                    <img src="img/formapag.png" alt="formas de pagamento" width="250rem">
+
+
+                </div>
+            </div>
+
+        </div>
+
+    </footer>
+
+  <!-- Bibliotecas -->
+
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+  
 </body>
+
 </html>
