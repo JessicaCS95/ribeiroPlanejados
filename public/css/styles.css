@@ -4,9 +4,9 @@
 * {
   margin: 0;
   padding: 0;
+  font-family: "Montserrat", "Courier New", Courier, monospace;
   box-sizing: border-box;
   text-decoration: none;
-  font-family: "Open Sans", sans-serif;
 }
 
 body {
@@ -15,6 +15,9 @@ body {
   background-color: #d4ccb4;
 }
 
+.body {
+  background-color: #d4ccb4;
+}
 
 /* Menu Navegação */
 
@@ -22,31 +25,30 @@ header {
   top: 0;
   left: 0;
   width: 100%;
-  background-color:#d4ccb4;
+  background-color: #d4ccb4;
   padding: 1rem 0 3rem 0;
   display: flex;
   flex-direction: row;
-  
 }
 
 i#burguer {
   display: none;
 }
 
-
-.container{
+.container {
   display: none;
 }
 
 .cabecalho {
-  background-color:#2c1c04;
+  display: flex;
+  background-color: #2c1c04;
   display: flex;
   flex-direction: row;
   font-family: "Montserrat", "Courier New", Courier, monospace;
   font-weight: bold;
   align-items: center;
   margin: auto;
-  box-shadow: 1px 1px 5px 1px #2c1c04 ;
+  box-shadow: 1px 1px 5px 1px #2c1c04;
   padding: 0 0 0 14rem;
   width: 100%;
 }
@@ -69,8 +71,7 @@ i#burguer {
 .menu1,
 .menu2,
 .menu3,
-.menu4,
-.menu5 {
+.menu4{
   flex: 1;
   padding: 1%;
   text-align: center;
@@ -79,18 +80,17 @@ i#burguer {
 .cabecalho .a {
   text-decoration: none;
   color: #d4ccb4;
-  font-size: 1rem;
+  font-size: 1.3rem;
   white-space: nowrap;
   padding: 3% 5%;
 }
 
-.cabecalho .a:hover{
+.cabecalho .a:hover {
   color: #a47c4c;
 }
 
 .perfil {
   margin: auto;
-  
 }
 
 .iconperfil {
@@ -98,12 +98,11 @@ i#burguer {
   margin-right: 20px;
 }
 
-.iconperfil:hover{
+.iconperfil:hover {
   content: url(../img/perfil_hover.png);
 }
 
-
-.open-login-cadastro{
+.open-login-cadastro {
   display: none;
 }
 
@@ -143,6 +142,50 @@ i#burguer {
   display: none;
 }
 
+.perfil {
+  display: flex;
+  flex-direction: column;
+  transition: background-color 0.3s ease;
+  cursor: pointer;
+  margin-right: 2rem;
+}
+
+.openPerfil {
+  display: none;
+  position: absolute;
+  background-color: #2c1c04;
+  text-align: justify;
+  padding: 0.5%;
+  margin-top: 3rem;
+  border-radius: 1px;
+  z-index: 200;
+  text-decoration: none;
+}
+
+.openPerfil .navlogin {
+  color: #d4ccb4;
+  text-decoration: none;
+  padding: 2%;
+  margin: 1%;
+}
+
+.openPerfil .navcadastro {
+  color: #d4ccb4;
+  text-decoration: none;
+  padding: 2%;
+  margin: 1%;
+}
+
+.navlogin:hover {
+  zoom: 105%;
+  color: #a47c4c;
+}
+
+.navcadastro:hover {
+  zoom: 105%;
+  color: #a47c4c;
+}
+
 /* Fundo amadeirado */
 
 .fundomadeira {
@@ -156,22 +199,22 @@ i#burguer {
   align-items: center;
 }
 
-.textoh1 {
-  color: #888168;
-  font-family: "Montserrat";
-  font-weight: bold;
+.fundomadeira .textoh1 {
+  color: #d4ccb4;
+  font-weight: 900;
   width: 100%;
   text-align: end;
 }
 
 .textoh1 h1 {
+  font-family: "Montserrat";
   margin: 0;
   padding: 2%;
 }
 
 /* Main  */
 
-main {
+.principal {
   font-family: "Open Sans";
   color: #a37c4c;
   font-size: 1.25rem;
@@ -179,48 +222,46 @@ main {
   max-width: 37.5rem;
   margin: auto;
   width: 100%;
-
 }
 
-/* Home */
-
-/* Banner */
+/* Home Banner */
 
 .carousel-caption {
   position: absolute;
   display: flex;
 }
 
-.btnorcamento{
+.btnorcamento {
   display: flex;
   z-index: 50;
   padding: 0.8%;
   border-radius: 13px;
   border: none;
   cursor: pointer;
+  background-color: #d4ccb4;
+  color: #2c1c04;
+}
+
+.btnorcamento:hover {
+  background-color: #a47c4c;
+}
+
+.btnorcamento .linkbtn {
+  text-decoration: none;
   font-family: "Montserrat", "Courier New", Courier, monospace;
   font-size: 1rem;
   font-weight: bold;
-  background-color:#d4ccb4;
-  color:#2c1c04;
+  color: #2c1c04;
 }
 
-.btnorcamento:hover{
-  background-color: #a47c4c;
-  color: #d4ccb4;
-}
-
-.corfundo{
+.corfundo {
   background-color: #d4ccb4;
   margin: 0;
-  
 }
 
-
-
-.faixinhaEntrega{
+.faixinhaEntrega {
   display: flex;
-  background-color:#d4ccb4;
+  background-color: #d4ccb4;
   width: 100%;
 }
 
@@ -236,15 +277,18 @@ main {
 
 .content {
   display: flex;
-  justify-content:left;
-  align-items:center;
+  justify-content: left;
+  align-items: center;
   animation: mover 12s linear infinite;
-  
 }
 
 @keyframes mover {
-  0% { transform: translateX(-50rem); }
-  100% { transform: translateX(93.75rem); }
+  0% {
+    transform: translateX(-50rem);
+  }
+  100% {
+    transform: translateX(93.75rem);
+  }
 }
 
 .caminhao {
@@ -258,24 +302,25 @@ main {
   white-space: nowrap;
 }
 
-
 /* Decorados */
-     
 
-.decorados{
+.decorados {
   display: flex;
   width: 100%;
-  background-color:#d4ccb4;
+  background-color: #d4ccb4;
+}
+
+.mensagemMobile {
+  display: none;
 }
 
 .flip-card {
   background-color: transparent;
   width: 50%;
   height: 18.75rem;
-  perspective: 62.5rem; 
+  perspective: 62.5rem;
   margin: auto;
 }
-
 
 .flip-card-inner {
   position: relative;
@@ -286,21 +331,18 @@ main {
   transform-style: preserve-3d;
 }
 
-
 .flip-card:hover .flip-card-inner {
   transform: rotateY(180deg);
 }
 
-
-.flip-card-front, .flip-card-back {
+.flip-card-front,
+.flip-card-back {
   position: absolute;
   width: 100%;
   height: 100%;
-  -webkit-backface-visibility: hidden; 
+  -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
 }
-
-
 
 .flip-card-front img {
   width: 100%;
@@ -308,64 +350,164 @@ main {
   padding: 1%;
 }
 
-
 .flip-card-back {
   display: flex;
   width: 100%;
   height: 100%;
-  background-color:#2c1c04;
+  background-color: #2c1c04;
   color: #d4ccb4;
   transform: rotateY(180deg);
 }
 
-.flip-card-back h1{
-font-size: 1.8rem;
-margin: auto;
-font-family: "Montserrat", "Courier New", Courier, monospace;
-padding: 1%;
-white-space: nowrap;
+.flip-card-back h1 {
+  font-size: 1.8rem;
+  margin: auto;
+  font-family: "Montserrat", "Courier New", Courier, monospace;
+  padding: 1%;
+  white-space: nowrap;
 }
-
-
 
 /* Avaliação Clientes */
 
-.avaliacaoClientes{
-  background-color:#d4ccb4;
+.avaliacaoClientes {
+  background-color: #d4ccb4;
   padding: 3% 0;
 }
 
-.clientes{
+.clientes {
   color: #2c1c04;
   font-size: 1.8rem;
   font-weight: bold;
   white-space: nowrap;
   text-align: center;
   width: 100%;
-  
 }
 
-.avaliacoes{
+.avaliacoes {
   display: flex;
   width: 100%;
   align-items: center;
-  justify-content:space-around;
+  justify-content: space-around;
   margin: 3rem 0;
-  background-color:#d4ccb4;
-  
+  background-color: #d4ccb4;
 }
 
-.av1, .av2, .av3{
+.av1,
+.av2,
+.av3 {
   width: 98%;
 }
 
-#carouselExampleSlidesOnly{
+#carouselExampleSlidesOnly {
   display: none;
 }
 
 /* Quem Somos */
 
+.texto-quem-somos {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 1.7rem;
+  color: #805f36;
+  font-weight: 400;
+  text-align: justify;
+  width: 70%;
+  padding: 1.5rem;
+  border-radius: 1rem;
+}
 
+.strong {
+  font-weight: bold;
+}
+
+.portfolio-quemsomos {
+  margin: auto;
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+  box-shadow: 0rem 0.5rem 0rem 1rem;
+  color: #f3ebde;
+  position: relative;
+  width: 80%;
+  height: 40rem;
+  overflow: hidden;
+}
+
+
+
+.portfolio-quemsomos img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.container-quemsomos {
+  display: flex;
+  justify-content: space-between;
+  gap: 2rem;
+  padding: 2rem;
+  flex-wrap: nowrap;
+}
+
+.logo-quemsomos {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 1.5rem;
+  padding: 2rem;
+  border-radius: 1rem;
+  flex: 1;
+  max-width: 30rem;
+}
+
+.logo-quemsomos figcaption {
+  font-size: 1.7rem;
+  font-weight: bolder;
+  color: #2c1c04;
+  margin: 0;
+}
+
+.logo-quemsomos img {
+  width: 6vw;
+  height: 11vh;
+  max-width: 25rem;
+  border-radius: 8px;
+}
+
+.logo-quemsomos p, .li-valores{
+  font-size: 1.5rem;
+  line-height: 1.5;
+  margin: 0;
+  padding: 0 1rem;
+  color:#2c1c04;
+  font-weight: bold;
+  text-align:left;
+}
+
+.container-quemsomos {
+  display: flex;
+  flex-wrap: wrap; /* Permite que os itens quebrem em novas linhas em telas menores */
+  justify-content: space-around; /* Distribui espaço entre os itens */
+  gap: 1rem; /* Espaço entre os itens */
+}
+
+/* Vídeo */
+
+.videobanner {
+  margin-top: 3rem;
+  width: 100%; 
+  background-color: #ccc;
+  overflow: hidden;
+  min-width: 300px; 
+  max-width: 100%;
+}
+
+.videobanner video { 
+  width: 100%;
+  object-fit: cover; 
+}
 
 /* Cadastro */
 
@@ -385,18 +527,18 @@ form {
   width: 100%;
 }
 
-.dados, .email-login3, .login-senha {
+.dados,
+.email-login3,
+.login-senha {
   width: 100%;
-  padding: 0.5rem;
+  padding: 0.2rem;
   border: 0;
   border-radius: 4px;
   outline: 0;
-  
 }
 
-
-
-.cpfedata, .email-login {
+.cpfedata,
+.email-login {
   display: flex;
   flex-wrap: wrap;
   gap: 1rem;
@@ -404,14 +546,17 @@ form {
 }
 
 .cpf,
-.datanasc, .email-login2, .senha-login {
+.datanasc,
+.email-login2,
+.senha-login {
   display: flex;
   flex-direction: column;
   width: 100%;
 }
 
 .cpf input,
-.datanasc input, .senha-login input {
+.datanasc input,
+.senha-login input {
   width: 100%;
   margin: 0.25rem;
   padding: 0.5rem;
@@ -420,17 +565,17 @@ form {
   box-sizing: border-box;
 }
 
-.senha-login{
+.senha-login {
   position: relative;
 }
 
-.bi-eye-fill, .bi-eye-slash-fill{
+.bi-eye-fill,
+.bi-eye-slash-fill {
   font-size: 1.5rem;
   cursor: pointer;
   position: absolute;
   right: 5%;
   bottom: 1.5%;
-  
 }
 
 .inline {
@@ -451,7 +596,8 @@ form {
 
 .fimform input {
   width: 100%;
-  padding: 0.5rem;
+  padding: 0.4rem;
+  font-size: 1rem;
   border: 1px solid #ccc;
   border-radius: 4px;
   background-color: #a47c4c;
@@ -460,48 +606,50 @@ form {
   cursor: pointer;
 }
 
-.fieldset {
+
+
+.fieldset1 {
   margin-top: 2%;
   width: 100%;
 }
 
-fieldset {
+.fieldset2 {
   display: flex;
   border-top: 0.125rem solid #636363;
   border-bottom: none;
   border-left: none;
   border-right: none;
-  display: block;
-  text-align: center;
-  justify-content: center;
-  color: #636363;
-  margin: auto;
+  margin: 2rem 0;
 }
 
 .fim {
   display: flex;
   justify-content: center;
   margin-bottom: 4rem;
-  font-size: 1rem;
+  font-size: 1.1rem;
 }
 
 .conta {
-  text-decoration: none;
   text-decoration-line: underline;
   color: #a37c4c;
 }
 
-/* Main Login */
-.textoh2 {
-  text-align: center;
-  color: #888168;
-  font-family: "Montserrat";
-  margin-top: 2rem;
+.conta:hover {
+  color: #a37c4c; 
+  text-decoration: underline; 
+  zoom: 102%;
 }
+
+
+/* Main Login */
 
 .rec-senha {
   color: #a47c4c;
   text-decoration: underline;
+}
+
+.rec-senha:hover{
+  color: #a47c4c;
 }
 
 .login {
@@ -514,13 +662,18 @@ fieldset {
 .login input {
   width: 30%;
   margin-left: 70%;
-  padding: 0.5rem;
+  padding: 0.3rem;
   border: 1px solid #ccc;
   border-radius: 4px;
   background-color: #a47c4c;
   color: #fff;
   font-weight: bold;
   cursor: pointer;
+  font-size: 1rem;
+}
+
+.login-senha{
+ height: 2.5rem;
 }
 
 .logo-google,
@@ -530,6 +683,10 @@ fieldset {
   margin-left: 25%;
 }
 
+.logogoogle:hover{
+  text-decoration: none;
+}
+
 .cadastre-se {
   margin-bottom: 30%;
   width: 100%;
@@ -537,21 +694,18 @@ fieldset {
   border-radius: 4px;
   background-color: #a47c4c;
   color: #fff;
-  font-size: 1rem ;
+  font-size: 1rem;
   font-weight: bold;
-  text-align: center  ;
-  cursor: pointer;
+  text-align: center;
+  cursor: pointer; 
 }
 
-/* Main */
-main {
-  font-family: "Open Sans";
-  color: #a37c4c;
-  font-size: 1.25rem;
-  padding: 1rem;
-  max-width: 37.5rem;
-  margin: auto;
+.cadastre-se:hover{
+  text-decoration: none;
+  color: #fff;
 }
+
+
 
 /* Blog */
 
@@ -577,7 +731,7 @@ main {
   border-radius: 8px;
   box-shadow: 0 0 50px rgba(5, 5, 5, 5.1);
   margin-bottom: 20px;
-  transition: background-color 0.3s ease;
+  transition: 0.3s ease;
   cursor: pointer;
   width: 80%;
   margin: 20px auto;
@@ -596,7 +750,7 @@ main {
 
 .text-box {
   display: none;
-  background-color:#a47c4c;
+  background-color: #a47c4c;
   text-align: justify;
   padding: 10px;
   margin-top: 10px;
@@ -606,6 +760,114 @@ main {
 .text-box p {
   font-size: 16px;
   color: #2c1c04;
+}
+
+/* Portfolio */
+
+.title-portfolio {
+  text-align: center;
+  margin: 3rem;
+  font-family: "Montserrat";
+  font-weight: bold;
+  font-size: 36px;
+  margin-bottom: 30px;
+  color: #2c1c04;
+}
+
+.portfolio {
+  margin-bottom: 8rem;
+}
+
+/* Orçamento */
+
+.pag-orcamento {
+  width: 100%;
+  background-color: #fff;
+  display: flex;
+  flex-direction: row;
+}
+
+.fundo-orcamento {
+  display: flex;
+  width: 50%;
+  height: 37.5rem;
+}
+
+.fundo-casa {
+  display: flex;
+  width: 50%;
+  height: 37.5rem;
+}
+
+.title-orcamento {
+  display: block;
+  position: absolute;
+  text-wrap: wrap;
+  font-family: "Montserrat";
+  font-weight: bold;
+  font-size: 1.7rem;
+  color: #2c1c04;
+  width: 50%;
+  height: 40%;
+  padding: 10% 2%;
+  overflow: wrap;
+  margin: auto;
+}
+
+.form-orcamento {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  height: 37.5rem;
+}
+
+.divform {
+  margin: auto;
+  display: flex;
+  border: #d4ccb4 3px solid;
+  border-radius: 15px;
+}
+
+.orcamento {
+  font-family: "Montserrat";
+  font-weight: bold;
+  font-size: 2rem;
+  color: #2c1c04;
+  text-align: center;
+  padding: 1%;
+}
+
+.labelOrcamento {
+  display: flex;
+  flex-direction: column;
+  width: 95%;
+  font-family: "Montserrat";
+  font-weight: bold;
+  color: #2c1c04;
+}
+
+.dadosOrcamento {
+  width: 95%;
+  padding: 0.5%;
+  border: 2px solid #d4ccb4;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+#solicitarOrcamento {
+  font-family: "Montserrat";
+  font-weight: bold;
+  color: #2c1c04;
+  padding: 1%;
+  margin: 2%;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  background-color: #d4ccb4;
+}
+
+#solicitarOrcamento:hover {
+  background-color: #a47c4c;
 }
 
 /* Footer */
@@ -627,7 +889,7 @@ main {
 }
 
 .contatos,
-.endereco{
+.endereco {
   display: flex;
   flex-direction: column;
   font-size: 1.1rem;
@@ -642,13 +904,12 @@ main {
   justify-content: left;
 }
 
-.mailto {
+.email .emailribeiro {
   text-decoration: none;
   color: inherit;
 }
 
-
-.mailto:hover {
+.emailribeiro:hover {
   text-decoration: underline;
 }
 
@@ -696,59 +957,169 @@ address {
   box-shadow: 0.125rem 0.125rem 1.25rem #5fe690;
 }
 
-  /* Quem Somos */
-  
+/* tela de redefinir senha */
+body .geral-redefinir {
+  background-color: #d4ccb4;
+}
+
+.paragrafo {
+
+  color: #a37c4c;
+  font-size: 1.25rem;
+  max-width: 35.5rem;
+  margin: auto;
+  width: 100%;
+}
+
+.tamanho {
+  font-weight: bold;
+}
+
+.enviar {
+  display: flex;
+  font-size: 1rem;
+  justify-content: center;
+  width: 25%;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: #a47c4c;
+  color: #fff;
+  font-weight: bold;
+  cursor: pointer;
+  margin-left: 0.2%;
+  margin-bottom: 50%;
+}
+
+.paragrafo {
+  font-size: 90%;
+  font-weight: 480;
+  margin-top: 20%;
+}
+
+.email-login3 {
+  font-size: 450;
+}
+
+/* Redefinir senha */
+.titulo-redefinir {
+  line-height: 1rem;
+  font-weight: bold;
+}
+
+div .logar-redefinir {
+  margin: 0 30rem 10rem 0;
+  color: black;
+  border-color: black;
+}
+
+/* tela de check */
+.paragrafo-check {
+  display: flex;
+  align-items: center;
+  font-size: 2rem;
+  color: #2c1c04;
+  font-weight: 300;
+  margin-top: 20%;
+}
+
+.enviar-check {
+  display: flex;
+  justify-content: center;
+  width: 40%;
+  background-color: #a4764c;
+  color: black;
+  border: 2px solid black;
+  margin-left: 0.2%;
+  margin-bottom: 50%;
+}
+
+.imagem-check {
+  display: flex;
+  margin-right: 10px;
+}
+
+.paragrafo-check p {
+  margin: 0;
+}
+
 
 @media screen and (max-width: 1500px) {
- 
+  /* Orcamento */
+
+  .pag-orcamento {
+    flex-direction: column;
+  }
+
+  .form-orcamento {
+    width: 80vw;
+    margin: auto;
+  }
+
+  .fundo-casa {
+    margin: auto;
+  }
+
+  .fundo-orcamento {
+    width: 80vw;
+    margin: auto;
+  }
+
+  .casa {
+    width: 100%;
+    height: 80%;
+  }
+
   /* Decorados */
 
-  .flip-card-back h1{
+  .flip-card-back h1 {
     font-size: 1.2rem;
   }
 
   /* footer */
 
-.contatos,
-.endereco{
-  font-size: 1rem;
-}
+  .contatos,
+  .endereco {
+    font-size: 1rem;
+  }
 
-.email,
-.tel {
-  font-size: 0.9rem;
-}
+  .email,
+  .tel {
+    font-size: 0.9rem;
+  }
 
-.local{
-  font-size: 0.9rem;
-}
+  .local {
+    font-size: 0.9rem;
+  }
+
+  /* Quem Somos */
+
+  .texto-quem-somos{
+    font-size: 1.2rem;
+  }
 }
 
 @media screen and (max-width: 1000px) {
-
-   /* Menu-Mobile */
-   header {
+  /* Menu-Mobile */
+  header {
     padding: 0;
   }
-   
 
-   .imglogoheadermobile{
+  .imglogoheadermobile {
     width: 35%;
-    
-   }
-  
-   .container{
+  }
+
+  .container {
     display: flex;
     width: 100%;
     height: 100%;
-   }
+  }
 
-   .d-block{
+  .d-block {
     height: 15rem;
     width: 100%;
   }
 
-  #menuButton{
+  #menuButton {
     display: flex;
     margin: auto;
   }
@@ -759,7 +1130,6 @@ address {
     cursor: pointer;
     font-size: 2.3rem;
   }
-
 
   .menu-mobile {
     position: absolute;
@@ -774,7 +1144,6 @@ address {
     display: flex;
     flex-direction: column;
     text-align: center;
-    
   }
 
   .menu-mobile .nav-item {
@@ -791,7 +1160,7 @@ address {
     font-weight: bold;
   }
 
-  .nav-item{
+  .nav-item {
     z-index: 1;
   }
 
@@ -808,32 +1177,32 @@ address {
 
   .open {
     display: block;
-    
   }
 
   .cabecalho {
     display: none;
   }
 
-
   /* Banner Carrossel */
-  .btnorcamento{
+
+  .btnorcamento .linkbtn {
     font-size: 0.8rem;
+  }
+
+  .btnorcamento {
     padding: 1%;
   }
 
-  .logoheader{
+  .logoheader {
     display: none;
-   }
- 
+  }
 
-/* Decorados */
+  /* Decorados */
 
-  .decorados{
+  .decorados {
     display: flex;
     flex-direction: column;
     padding: 1%;
-    
   }
 
   /* Footer */
@@ -842,20 +1211,19 @@ address {
     flex-direction: column;
   }
 
-.contatos,
-.endereco{
-  font-size: 1.3rem;
-}
+  .contatos,
+  .endereco {
+    font-size: 1.3rem;
+  }
 
-.email,
-.tel {
-  font-size: 1.1rem;
-}
+  .email,
+  .tel {
+    font-size: 1.1rem;
+  }
 
-.local{
-  font-size: 1.1rem;
-}
-
+  .local {
+    font-size: 1.1rem;
+  }
 
   .logofooter {
     width: 35%;
@@ -882,14 +1250,41 @@ address {
   .icone {
     margin: 0;
   }
-  
+
+  /* Orçamento */
+
+  .casa {
+    content: url(../img/casamenor.png);
+  }
+
+  .fundo-orcamento {
+    width: 100%;
+    height: 20%;
+  }
+
+  .form-orcamento {
+    margin-bottom: 3rem;
+  }
+
+  .title-orcamento {
+    display: none;
+  }
+
+  .fundo-casa {
+    height: 10rem;
+  }
 }
 
 @media only screen and (max-width: 768px) {
 
+  
+  .menu-mobile {
+    top: 3.5rem;
+  }
+
   /* Banner Carrossel */
 
-  .btnorcamento{
+  .btnorcamento {
     font-size: 0.6rem;
     padding: 2%;
   }
@@ -906,18 +1301,14 @@ address {
     width: 100%;
   }
 
-  .fimform input {
-    width: 100%;
-  }
-
   
 
   /* Faixinha entrega */
 
- .frete-faixa {
-  font-size: 1rem;
-}
-  .caminhao{
+  .frete-faixa {
+    font-size: 1rem;
+  }
+  .caminhao {
     width: 2rem;
     height: 2rem;
   }
@@ -925,66 +1316,99 @@ address {
   .content {
     display: flex;
     justify-content: flex-start;
-    align-items:center;
+    align-items: center;
     animation: mover 12s linear infinite;
   }
 
   @keyframes mover {
-
-    0% { transform: translateX(-25rem); }
-    100% { transform: translateX(40rem); }
+    0% {
+      transform: translateX(-25rem);
+    }
+    100% {
+      transform: translateX(40rem);
+    }
   }
-
 
   /* Decorados */
 
-  .decorados{
-    overflow: hidden;
+  .flip-card:hover .flip-card-inner {
+    transform: none;
+  }
+
+  .mensagemMobile {
+    display: flex;
+    width: 100%;
+  }
+
+  .h1mensagemMobile {
+    max-width: 80%;
+    font-size: 1rem;
+    font-weight: bold;
+    color: #2c1c04;
+    margin: auto;
   }
 
   .flip-card-front img {
-    width: 28rem;
+    width: 100%;
     height: 15.75rem;
-    
+    margin: auto;
   }
 
   .flip-card {
-    width: 31rem;
-    width: 28rem;
+    width: 100%;
     height: 15.75rem;
+    margin: auto;
   }
-  
-  .flip-card-back h1{
+
+  .flip-card-back h1 {
     font-size: 1.2rem;
-    }
+  }
 
   /* Avaliação Clientes */
 
-  .avaliacaoClientes{
+  .avaliacaoClientes {
     width: 100%;
-    padding: 5% 0 ;
+    padding: 5% 0;
   }
 
-  .clientes{
+  .clientes {
     margin: 10% 0;
-    font-size: 1.3rem;
+    font-size: 1.1rem;
   }
 
-  #carouselExampleSlidesOnly{
+  #carouselExampleSlidesOnly {
     display: block;
     margin: auto;
     margin-bottom: 3rem;
     width: 80%;
   }
 
-  .avaliacoes{
+  .avaliacoes {
     display: none;
   }
 
- 
+   /* Quem Somos */
 
-  /* Quem Somos */
-  
+   .texto-quem-somos{
+    font-size: 1rem;
+    padding: 0;
+    width: 85%;
+  }
+
+  .logo-quemsomos img {
+    width: 15vw;
+    height: 12vh;
+  }
+
+  .logo-quemsomos figcaption {
+    font-size: 1.7rem;
+  }
+
+  .logo-quemsomos p, .li-valores{
+    font-size: 1.2rem;
+  }
+
+ 
 
   /* Footer */
 
@@ -992,12 +1416,24 @@ address {
     width: 50%;
   }
 
-}
+  /* Orçamento */
 
-@media screen and (max-width: 1000px){
-  .menu-mobile{
-    top: 7%;
+  .divform {
+    padding: 1rem;
+    max-width: 37.5rem;
+    margin: auto;
+    width: 100%;
+  }
+
+  .form {
+    padding: 1rem;
+    max-width: 37.5rem;
+    margin: auto;
+    width: 100%;
+  }
+
+  .responsividadeform {
+    width: 100%;
+    font-size: 0.6rem;
   }
 }
-
-

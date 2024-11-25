@@ -92,6 +92,7 @@ window.onload = function () {
 
 document.getElementById('email-login').focus();
 
+
 //blog
 function toggleText(id) {
     var textBox = document.getElementById(id);
@@ -102,6 +103,23 @@ function toggleText(id) {
     }
 }
 
+function toggleOpen(id){
+    var openPerfil = document.getElementById(id);
+    if (openPerfil.style.display === "none" || openPerfil.style.display === "") {
+        openPerfil.style.display = "block"
+        } else {
+        openPerfil.style.display = "none";
+    }
+
+}
 
 
+//Animação AOS
 
+AOS.init({
+    duration: 1000, // Duração da animação em milissegundos
+    offset: 120, // Distância do elemento até o topo antes da animação iniciar
+    easing: 'ease-in-out', // Tipo de animação
+    delay: 0, // Tempo de espera antes de começar a animação
+    once: true, // Se true, anima apenas na primeira vez que o elemento aparece
+  });

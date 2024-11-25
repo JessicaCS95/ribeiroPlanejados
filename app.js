@@ -3,6 +3,7 @@ var conexao = require("./conexaobanco");
 
 const app = express();
 app.set('view engine', 'ejs');
+app.set('views', __dirname + '/views');
 app.use(express.static('public'));
 
 //chamando o módulo body-parser para deixar o código mais organizado
@@ -14,40 +15,49 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 //GET
 app.get('/', (req, res) => {
-    res.render('index');
+    res.render('index', { home: 'Home - Ribeiro Planejados'});
 });
 
 app.get('/blog', (req, res) => {
-    res.render('blog');
+    res.render('blog', { pblog: 'Blog - Ribeiro Planejados'});
 });
 
 app.get('/cadastro', (req, res) => {
-    res.render('cadastro');
+    res.render('cadastro', { pcadastro: 'Cadastro - Ribeiro Planejados'});
 });
-app.get('/catalogo', (req, res) => {
-    res.render('catalogo');
-});
+
 app.get('/login', (req, res) => {
-    res.render('login');
+    res.render('login', { plogin: 'Login - Ribeiro Planejados'});
 });
 app.get('/orcamento', (req, res) => {
-    res.render('orcamento');
+    res.render('orcamento', { porcamento: 'Orçamento - Ribeiro Planejados'});
 });
 app.get('/portfolio', (req, res) => {
-    res.render('portfolio');
+    res.render('portfolio', { pportfolio: 'Portfolio - Ribeiro Planejados'});
 });
-app.get('/produto', (req, res) => {
-    res.render('produto');
-});
+
 app.get('/quemsomos', (req, res) => {
-    res.render('quemsomos');
+    res.render('quemsomos', { pquemsomos: 'Quem Somos - Ribeiro Planejados'});
 });
 app.get('/recuperacaosenha', (req, res) => {
-    res.render('recuperacaosenha');
+    res.render('recuperacaosenha', { precsenha: 'Recuperação de Senha - Ribeiro Planejados'});
+});
+app.get('/confirmacaosenha', (req, res) => {
+    res.render('confirmacaosenha', { pconfsenha: 'Confirmação de Senha - Ribeiro Planejados'});
+});
+app.get('/checksenha', (req, res) => {
+    res.render('checksenha', { pchecksenha: 'Nova Senha Cadastrada! - Ribeiro Planejados'});
+});
+app.get('/status', (req, res) => {
+    res.render('satus', { pstatus: 'Status - Ribeiro Planejados'});
 });
 app.use('/404', (req, res) => {
-    res.render('404');
+    res.render('404', { p404: 'Erro 404 - Ribeiro Planejados'});
 });
+
+//teste
+
+
 
 //POST 
 
@@ -74,5 +84,5 @@ app.post('/cadastro', function (req, res) {
 
 
 
-app.listen(4000);
+app.listen(4500);
 

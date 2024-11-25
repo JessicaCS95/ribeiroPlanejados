@@ -2,121 +2,128 @@
 <html lang="pt-br">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="stylesheet" href="css/styles.css">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous"> <!-- bannercarrossel -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" /> <!-- Menu-Hambuerguer -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"> <!-- WhatsApp -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"> <!-- eye-senha -->
-    <script src="js/script.js" defer></script>
-    <title>Ribeiro Planejados</title>
-    
-    
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="shortcut icon" href="/img/faviconRP.ico" type="image/x-icon">
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+    integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  <!-- bannercarrossel -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" /> <!-- Menu-Hamburguer -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <!-- WhatsApp -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <!-- eye-senha -->
+  <script src="js/script.js" defer></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" /> <!-- Animação AOS -->
+
+  <title><%= home%></title>  
 </head>
 
 <body>
-    <header>
-         <!-- WhatsApp -->
+  <header>
+    <!-- WhatsApp -->
     <div class="buttonzap">
-        <a href="https://api.whatsapp.com/send?phone=SEUNUMERO" class="icon" target="_blank">
-            <i class="fab fa-whatsapp"></i>
-        </a>
+      <a href="https://api.whatsapp.com/send?phone=11950003119" class="icon" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+      </a>
     </div>
 
     <div class="logoheader"> <a href="/"><img class="imglogoheader" src="img/logo_header.png" alt="logo"></a>
     </div>
-    
-        <!-- Menu Principal -->
-         
-        <nav id="menu" class="cabecalho">
-    
-            <div class="menu1"><a class="a" href="quemsomos">Quem Somos</a></div>
-            <div class="menu2"><a class="a" href="catalogo">Catálogo</a></div>
-            <div class="menu3"><a class="a" href="portfolio">Portfólio</a></div>
-            <div class="menu4"><a class="a" href="orcamento">Orçamento</a></div>
-            <div class="menu5"><a class="a" href="blog">Blog</a></div>
 
-            
-            <div class="perfil"><a href="#"><img src="./img/perfil.png" class="iconperfil"></a></div>
-        </nav>
+    <!-- Menu Principal -->
 
-        
+    <nav id="menu" class="cabecalho">
 
-         <!-- Menu Mobile -->
+      <div class="menu1"><a class="a" href="quemsomos">Quem Somos</a></div>
+      <div class="menu2"><a class="a" href="portfolio">Portfólio</a></div>
+      <div class="menu3"><a class="a" href="orcamento">Orçamento</a></div>
+      <div class="menu4"><a class="a" href="blog">Blog</a></div>
 
-         <div class="container">
-          
-          <a href="/"><img class="imglogoheadermobile" src="img/logo_header.png" alt="logo"></a>
-          
 
-            <div id="menuButton"><i id="burguer" class="material-icons" onclick="menuShow()">menu</i></div>
-
-          
+      <div class="perfil" id="perfil" onclick="toggleOpen('openPerfil')"><img src="./img/perfil.png" class="iconperfil">
+        <div class="openPerfil" id="openPerfil">
+          <div><a class="navlogin" href="login">Login</a></div>
+          <div><a class="navcadastro" href="cadastro">Cadastro</a></div>
         </div>
+      </div>
+    </nav>
 
-        <div class="menu-mobile">
-            <ul>
-                <li class="nav-item"><a href="login">LOGIN </a> <a href="cadastro"> / CADASTRO</a></li>
-                <li class="nav-item"><a href="quemsomos">QUEM SOMOS</a></li>
-                <li class="nav-item"><a href="catalogo">CATÁLOGO</a></li>
-                <li class="nav-item"><a href="portfolio">PORTFÓLIO</a></li>
-                <li class="nav-item"><a href="orcamento">ORÇAMENTO</a></li>
-                <li class="nav-item"><a href="blog">BLOG</a></li>
-            </ul>
+
+
+    <!-- Menu Mobile -->
+
+    <div class="container">
+
+      <a href="/"><img class="imglogoheadermobile" src="img/logo_header.png" alt="logo"></a>
+
+
+      <div id="menuButton"><i id="burguer" class="material-icons" onclick="menuShow()">menu</i></div>
+
+
+    </div>
+
+    <div class="menu-mobile">
+      <ul>
+        <li class="nav-item"><a href="login">LOGIN </a> <a href="cadastro"> / CADASTRO</a></li>
+        <li class="nav-item"><a href="quemsomos">QUEM SOMOS</a></li>
+        <li class="nav-item"><a href="portfolio">PORTFÓLIO</a></li>
+        <li class="nav-item"><a href="orcamento">ORÇAMENTO</a></li>
+        <li class="nav-item"><a href="blog">BLOG</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <main>
+    <div class="bannermain">
+
+      <!-- Banner Carrossel -->
+      <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+        <div class="carousel-caption d-flex flex-column justify-content-center align-items-center">
+          <button class="btnorcamento"><a href="orcamento" class="linkbtn">SOLICITAR ORÇAMENTO</a></button>
         </div>
-    </header>
+        <ol class="carousel-indicators">
+          <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+          <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+          <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+        </ol>
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img class="d-block w-100" src="img/bannerhome_1.png" alt="Primeiro Slide">
+          </div>
+          <div class="carousel-item">
+            <img class="d-block w-100" src="img/bannerhome_2.png" alt="Segundo Slide">
+          </div>
+          <div class="carousel-item">
+            <img class="d-block w-100" src="img/bannerhome_3.png" alt="Terceiro Slide">
+          </div>
+        </div>
+        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Anterior</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Próximo</span>
+        </a>
+      </div>
 
-   <div class="bannermain">
-     
-         <!-- Banner Carrossel -->
-          <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-            <div class="carousel-caption d-flex flex-column justify-content-center align-items-center">
-              <button class="btnorcamento">SOLICITAR ORÇAMENTO</button>
-            </div>
-              <ol class="carousel-indicators">
-                <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-                <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-                <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-              </ol>
-              <div class="carousel-inner">
-                <div class="carousel-item active">
-                  <img class="d-block w-100" src="img/bannerhome_1.png" alt="Primeiro Slide">
-                </div>
-                <div class="carousel-item">
-                  <img class="d-block w-100" src="img/bannerhome_2.png" alt="Segundo Slide">
-                </div>
-                <div class="carousel-item">
-                  <img class="d-block w-100" src="img/bannerhome_3.png" alt="Terceiro Slide">
-                </div>
-              </div>
-              <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="sr-only">Anterior</span>
-              </a>
-              <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="sr-only">Próximo</span>
-              </a>
-            </div>
-     
-   </div>
-          
+    </div>
+
     <!-- Faixinha Entrega -->
-    
-            <div class="faixinhaEntrega">
-              <div class="frete-faixa" id="freteFaixa">
-                <div class="content">
-                <span>Atendemos São Paulo e Grande São Paulo</span>
-                <img src="img/caminhao.png" alt="Caminhão de entrega" class="caminhao" />
-                </div>
-                </div>
-                </div>
 
+    <div class="faixinhaEntrega">
+      <div class="frete-faixa" id="freteFaixa">
+        <div class="content">
+          <span>Atendemos São Paulo e Grande São Paulo</span>
+          <img src="img/caminhao.png" alt="Caminhão de entrega" class="caminhao" />
+        </div>
+      </div>
+    </div>
     <!-- Decorados -->
-
-    <div class="decorados">
-      <div class="flip-card">
+    <div  class="decorados">
+      <div data-aos="fade-up" class="flip-card">
         <div class="flip-card-inner">
           <div class="flip-card-front">
             <img src="img/decor1.png" alt="DECORAÇÃO 1">
@@ -126,7 +133,10 @@
           </div>
         </div>
       </div>
-      <div class="flip-card">
+      <div class="mensagemMobile">
+        <h1 class="h1mensagemMobile">✦ 3 ANOS DE GARANTIA ✦</h1>
+      </div>
+      <div data-aos="fade-up" class="flip-card">
         <div class="flip-card-inner">
           <div class="flip-card-front">
             <img src="img/decor2.png" alt="DECORAÇÃO 2">
@@ -136,100 +146,101 @@
           </div>
         </div>
       </div>
-      <div class="flip-card">
+      <div class="mensagemMobile">
+        <h1 class="h1mensagemMobile">✦ PARCELAMENTO EM ATÉ 12X ✦</h1>
+      </div>
+      <div data-aos="fade-up" class="flip-card">
         <div class="flip-card-inner">
           <div class="flip-card-front">
-            <img src="img/decor3.png" alt="DECORAÇÃO 3" >
+            <img src="img/decor3.png" alt="DECORAÇÃO 3">
           </div>
           <div class="flip-card-back">
             <h1>✦ SEUS MÓVEIS SOB MEDIDA ✦</h1>
           </div>
         </div>
       </div>
+      <div class="mensagemMobile">
+        <h1 class="h1mensagemMobile">✦ SEUS MÓVEIS SOB MEDIDA ✦</h1>
+      </div>
     </div>
-
     <!-- Avaliações Clientes -->
-
     <div class="avaliacaoClientes">
-        <p class="clientes" >NOSSOS CLIENTES RECOMENDAM ⭐️</p>
-        <div class="avaliacoes">
-          <figure><img class="av1" src="img/avaliacao01.png" alt="avaliação cliente 1"></figure>
-          <figure><img class="av2" src="img/avaliacao02.png" alt="avaliação cliente 2"></figure>
-          <figure><img class="av3" src="img/avaliacao03.png" alt="avaliação cliente 3"></figure>
+      <p data-aos="fade-up" class="clientes">NOSSOS CLIENTES RECOMENDAM ⭐️</p>
+      <div data-aos="fade-up" class="avaliacoes">
+        <figure><img class="av1" src="img/avaliacao01.png" alt="avaliação cliente 1"></figure>
+        <figure><img class="av2" src="img/avaliacao02.png" alt="avaliação cliente 2"></figure>
+        <figure><img class="av3" src="img/avaliacao03.png" alt="avaliação cliente 3"></figure>
       </div>
 
-      
-    <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
-      <div class="carousel-inner">
-        <div class="carousel-item active">
-          <img class="d-block w-100" src="img/avaliacao01.png">
+      <div data-aos="fade-up" id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img class="d-block w-100" src="img/avaliacao01.png">
+          </div>
+          <div class="carousel-item">
+            <img class="d-block w-100" src="img/avaliacao02.png" alt="Segundo Slide">
+          </div>
+          <div class="carousel-item">
+            <img class="d-block w-100" src="img/avaliacao03.png" alt="Terceiro Slide">
+          </div>
         </div>
-        <div class="carousel-item">
-          <img class="d-block w-100" src="img/avaliacao02.png" alt="Segundo Slide">
+      </div>
+
+    </div>
+  </main>
+
+
+  <!-- Footer -->
+  <footer>
+    <div class="fundo">
+      <div class="logofooter">
+        <img src="img/logo_footer.png" alt="Logo na horizontal" width="100%">
+      </div>
+
+
+      <div>
+        <p class="contatos">CONTATOS</p>
+        <div>
+          <p class="email"> <img src="img/email.png" alt="Ícone e-mail" class="icone"> <a
+              href="mailto:marcenariazequinha@yahoo.com.br" class="emailribeiro">ribeiroplanejados@gmail.com.br</a> </p>
+          <p class="tel">
+            <img src="img/tel.png" alt="Ícone telefone" class="icone"> (11)95000-3119
+          </p>
         </div>
-        <div class="carousel-item">
-          <img class="d-block w-100" src="img/avaliacao03.png" alt="Terceiro Slide">
+      </div>
+
+      <div>
+        <p class="endereco">ENDEREÇO</p>
+        <div>
+          <address class="local"> Av. Alcântara Machado, 2293
+          </address>
+          <address class="local">São Paulo, SP, 03101-001 </address>
+        </div>
+      </div>
+
+      <div>
+        <div class="imgpagamento">
+          <img src="img/formapag.png" alt="formas de pagamento" width="250rem">
         </div>
       </div>
     </div>
-      
-      </div>
+  </footer>
 
-       
-     <!-- Avaliações Clientes Mobile -->
+  <!-- Bibliotecas -->
 
-    
-    <!-- Footer -->
-    <footer>
-        <div class="fundo">
-            <div class="logofooter">
-                <img src="img/logo_footer.png" alt="Logo na horizontal" width="100%">
-            </div>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+    integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+    integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+    crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
 
-
-            <div>
-                <p class="contatos">CONTATOS</p>
-                <div>
-                    <p class="email"> <img src="img/email.png" alt="Ícone e-mail" class="icone"> <a
-                            href="mailto:marcenariazequinha@yahoo.com.br"
-                            class="mailto">ribeiroplanejados@gmail.com.br</a> </p>
-
-                    <p class="tel">
-                        <img src="img/tel.png" alt="Ícone telefone" class="icone"> (11)98109-4528
-                    </p>
-
-                </div>
-            </div>
-
-            <div>
-                <p class="endereco">ENDEREÇO</p>
-                <div>
-                    <address class="local"> Av. Alcântara Machado, 2293
-                    </address>
-                    <address class="local">São Paulo, SP, 03101-001 </address>
-
-
-                </div>
-            </div>
-
-            <div>
-                <div class="imgpagamento">
-                    <img src="img/formapag.png" alt="formas de pagamento" width="250rem">
-
-
-                </div>
-            </div>
-
-        </div>
-
-    </footer>
-
-    <!-- Bibliotecas -->
-
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
-    
 </body>
-
 </html>
