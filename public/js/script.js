@@ -59,15 +59,12 @@ function mostrarSenha2(){
 }
 
 
-
-
-
 //evento alert
 
-function logar() {
-    const login = document.getElementById("botaoLogin").value;
-    alert("Bem Vindo!");
-}
+// function logar() {
+//     const login = document.getElementById("botaoLogin").value;
+//     alert("Bem Vindo!");
+// }
 
 // mudança de cor do botão
 
@@ -123,3 +120,6 @@ AOS.init({
     delay: 0, // Tempo de espera antes de começar a animação
     once: true, // Se true, anima apenas na primeira vez que o elemento aparece
   });
+
+  // Retorno Login
+

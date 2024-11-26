@@ -40,11 +40,13 @@
 
 
       <div class="perfil" id="perfil" onclick="toggleOpen('openPerfil')"><img src="./img/perfil.png" class="iconperfil">
+        <span id="userName"></span>
         <div class="openPerfil" id="openPerfil">
           <div><a class="navlogin" href="login">Login</a></div>
           <div><a class="navcadastro" href="cadastro">Cadastro</a></div>
         </div>
       </div>
+      <span></span>
     </nav>
 
 
@@ -85,11 +87,11 @@
           <div class="email-login">
             <div class="email-login2">
               <label for="email-Login">E-mail:</label>
-              <input type="email" name="email-login" class="email-login3" id="email-login" />
+              <input type="email" name="email_cliente" class="email-login3" id="email-login" />
             </div>
             <div class="senha-login">
               <label for="login-senha">Senha:</label>
-              <input type="password" name="verificaSenha" class="login-senha" id="login-senha" />
+              <input type="password" name="senha_cadastro" class="login-senha" id="login-senha" />
               <i class="bi bi-eye-fill" id="eye-senha" onclick="mostrarSenha()"></i>
             </div>
             <div>

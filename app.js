@@ -1,5 +1,6 @@
 const express = require('express');
 var conexao = require("./conexaobanco");
+const session = require('express-session');
 
 const app = express();
 app.set('view engine', 'ejs');
@@ -59,7 +60,7 @@ app.use('/404', (req, res) => {
 
 
 
-//POST 
+//POST CADASTRO
 
 app.post('/cadastro', function (req, res) {
     var cpf_cnpj= req.body.cpf_cnpj;
@@ -82,7 +83,48 @@ app.post('/cadastro', function (req, res) {
     });
 });
 
+//POST LOGIN
 
+app.use(session({
+    secret: 'chavesecretarbp', // Use uma chave forte na produção
+    resave: false,
+    saveUninitialized: false,
+  }));
+  
+  app.post('/login', (req, res) => {
+    const { email_cliente, senha_cadastro } = req.body;
+  
+    const query = 'SELECT * FROM CADASTRO_CLIENTE WHERE email_cliente = ? AND senha_cadastro = ?';
+  
+    conexao.query(query, [email_cliente, senha_cadastro], (err, results) => {
+      if (err) throw err;
+  
+      if (results.length > 0) {
+        // Usuário encontrado, salvar na sessão
+        req.session.CADASTRO_CLIENTE = {
+          id: results[0].id,
+          nome_completo_cliente: results[0].nome_completo_cliente,
+        };
+        res.redirect ('/');
+      } else {
+        // Usuário não encontrado
+        res.status(401).json({ success: false, message: "Credenciais inválidas!" });
+      }
+    });
+  });
+  
+//   // Rota para retornar informações do usuário logado
+//   app.get("/login", (req, res) => {
+//     if (req.session.CADASTRO_CLIENTE) {
+//       res.json({
+//         loggedIn: true,
+//         CADASTRO_CLIENTE: req.session.CADASTRO_CLIENTE,
+//       });
+//     } else {
+//       res.json({ loggedIn: false });
+//     }
+//   });
+  
 
-app.listen(4500);
+app.listen(2500);
 
