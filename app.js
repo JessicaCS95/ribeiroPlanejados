@@ -40,8 +40,8 @@ app.get('/portfolio', (req, res) => {
 app.get('/quemsomos', (req, res) => {
     res.render('quemsomos', { pquemsomos: 'Quem Somos - Ribeiro Planejados'});
 });
-app.get('/recuperacaosenha', (req, res) => {
-    res.render('recuperacaosenha', { precsenha: 'Recuperação de Senha - Ribeiro Planejados'});
+app.get('/redefinirsenha', (req, res) => {
+    res.render('redefinirsenha', { precsenha: 'Redefinir Senha - Ribeiro Planejados'});
 });
 app.get('/confirmacaosenha', (req, res) => {
     res.render('confirmacaosenha', { pconfsenha: 'Confirmação de Senha - Ribeiro Planejados'});
