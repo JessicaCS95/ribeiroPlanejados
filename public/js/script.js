@@ -68,21 +68,21 @@ function mostrarSenha2(){
 
 // mudança de cor do botão
 
-window.onload = function () {
-    const botao = document.getElementById("botaoLogin");
+// window.onload = function () {
+//     const botao = document.getElementById("botaoLogin");
   
-    if (botao) {
-      botao.addEventListener("mouseover", () => {
-        botao.style.backgroundColor = "#2c1c04";
-      });
+//     if (botao) {
+//       botao.addEventListener("mouseover", () => {
+//         botao.style.backgroundColor = "#2c1c04";
+//       });
   
-      botao.addEventListener("mouseout", () => {
-        botao.style.backgroundColor = "#a37c4c";
-      });
-    } else {
-      console.log("O botão de login não foi encontrado.");
-    }
-  };
+//       botao.addEventListener("mouseout", () => {
+//         botao.style.backgroundColor = "#a37c4c";
+//       });
+//     } else {
+//       console.log("O botão de login não foi encontrado.");
+//     }
+//   };
 
 
 //Focus

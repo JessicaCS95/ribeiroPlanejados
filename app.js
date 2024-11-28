@@ -56,10 +56,6 @@ app.use('/404', (req, res) => {
     res.render('404', { p404: 'Erro 404 - Ribeiro Planejados'});
 });
 
-//teste
-
-
-
 //POST CADASTRO
 
 app.post('/cadastro', function (req, res) {
@@ -113,17 +109,10 @@ app.use(session({
     });
   });
   
-//   // Rota para retornar informações do usuário logado
-//   app.get("/login", (req, res) => {
-//     if (req.session.CADASTRO_CLIENTE) {
-//       res.json({
-//         loggedIn: true,
-//         CADASTRO_CLIENTE: req.session.CADASTRO_CLIENTE,
-//       });
-//     } else {
-//       res.json({ loggedIn: false });
-//     }
-//   });
+
+  
+  
+  
   
 
 app.listen(2500);
