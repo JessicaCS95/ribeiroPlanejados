@@ -18,7 +18,7 @@
     <!-- Animação AOS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
 
-    <title><%= porcamento%></title>
+    <title><%= pcheckorcamento%></title>
 </head>
 
 <body class="body">
@@ -87,26 +87,14 @@
             </div>
 
             <div class="form-orcamento">
-                <h1 class="orcamento">Orçamento</h1>
-                <div class="divform">
-                    <form class="form" action="/orcamento" method="POST" enctype="multipart/form-data">
-                        <label class="labelOrcamento" for=" nomeOrcamento">Nome:</label>
-                        <input type="text" name="nomeOrcamento" class="dadosOrcamento">
-                        <label class="labelOrcamento" for=" emailOrcamento">E-mail:</label>
-                        <input type="text" name="emailOrcamento" class="dadosOrcamento">
-                        <label class="labelOrcamento" for=" celularOrcamento">Celular:</label>
-                        <input type="number" name="celularOrcamento" class="dadosOrcamento">
+                <div class="checkorc">
 
-                        <label class="labelOrcamento" for=" mensagemOrcamento">Detalhe o que você precisa:</label>
-
-                        <textarea type="text" name="mensagemOrcamento" class="dadosOrcamento"></textarea>
-                        <div class="responsividadeform">
-                            <input type="file" value="Arquivos" name="arquivos">
-                            <p>*Aqui você pode anexar a planta ou outros documentos.</p>
-                        </div>
-                        <input type="submit" value="SOLICITAR ORÇAMENTO" id="solicitarOrcamento"
-                            class="solicitarOrcamento">
-                    </form>
+                    <h1 class="orcamento2">Solicitação de Orçamento enviada com sucesso!</h1><img
+                    class="imgcheckorc"
+                    src="./img/check.png"
+                    alt="check orçamento"/>
+                    <p class="embreve">Em breve entraremos em contato</p>
+                    
                 </div>
             </div>
         </div>

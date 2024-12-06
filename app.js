@@ -1,14 +1,19 @@
 const express = require('express');
-var conexao = require("./conexaobanco");
+const conexao = require("./conexaobanco");
 const session = require('express-session');
+const fs = require('fs');
+const path = require('path');
 
 const app = express();
 app.set('view engine', 'ejs');
 app.set('views', __dirname + '/views');
 app.use(express.static('public'));
+app.use(express.json()); // Para processar JSON
+app.use(express.urlencoded({ extended: true })); // Para processar dados enviados como "application/x-www-form-urlencoded"
+
 
 //chamando o módulo body-parser para deixar o código mais organizado
-var bodyParser = require('body-parser');
+const bodyParser = require('body-parser');
 
 app.use(bodyParser.json());
 
@@ -32,6 +37,9 @@ app.get('/login', (req, res) => {
 });
 app.get('/orcamento', (req, res) => {
     res.render('orcamento', { porcamento: 'Orçamento - Ribeiro Planejados'});
+});
+app.get('/checkorcamento', (req, res) => {
+    res.render('checkorcamento', { pcheckorcamento: 'Enviado com Sucesso - Ribeiro Planejados'});
 });
 app.get('/portfolio', (req, res) => {
     res.render('portfolio', { pportfolio: 'Portfolio - Ribeiro Planejados'});
@@ -108,11 +116,61 @@ app.use(session({
       }
     });
   });
-  
 
+  // POST ORÇAMENTO
+
+  const multer = require('multer');
+  // Configuração do Multer para salvar os arquivos na pasta 'uploads'
+  const storage = multer.diskStorage({
+    destination: (req, file, cb) => {
+      cb(null, path.resolve("uploads")); // Pasta onde o arquivo será salvo
+    },
+    filename: (req, file, cb) => {
+      cb(null, Date.now() + '-' + file.originalname); // Nome único para o arquivo
+    }
+  });
   
+  const upload = multer({ storage });
   
+  app.post('/orcamento', upload.single('arquivos'), (req, res) => {
+    try {
+      // Exibir dados do corpo da requisição
+      console.log('Dados recebidos no corpo da requisição:', req.body);
   
+      // Verificar se o arquivo foi enviado
+      const arquivoPath = req.file ? req.file.path : null; // Define `null` se nenhum arquivo foi enviado
+  
+      // Preparar os dados para inserção no banco de dados
+      const sql = `
+        INSERT INTO ORCAMENTOS 
+        (nome_orcamento, email_orcamento, celular_orcamento, mensagem_orcamento, arquivos) 
+        VALUES (?, ?, ?, ?, ?)
+      `;
+      const valores = [
+        req.body.nomeOrcamento || null,
+        req.body.emailOrcamento || null,
+        req.body.celularOrcamento || null,
+        req.body.mensagemOrcamento || null,
+        arquivoPath // Pode ser o caminho do arquivo ou `null`
+      ];
+  
+      console.log('Dados preparados para inserção:', valores);
+  
+      // Inserir no banco de dados
+      conexao.query(sql, valores, (error, results) => {
+        if (error) {
+          console.error('Erro ao salvar no banco:', error);
+          return res.status(500).send('Erro no servidor.');
+        }
+  
+        console.log('Orçamento salvo com sucesso no banco:', results);
+        res.redirect("/checkorcamento");
+      });
+    } catch (err) {
+      console.error('Erro inesperado:', err);
+      res.status(500).send('Erro no servidor.');
+    }
+  });
   
 
 app.listen(2500);

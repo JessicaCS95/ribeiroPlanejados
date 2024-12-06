@@ -883,6 +883,37 @@ form {
   background-color: #a47c4c;
 }
 
+.imgcheckorc{
+  display: flex;
+  margin: auto;
+  width: 15%;
+  height: 50%;
+}
+
+.checkorc{
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  max-width: 37.5rem;
+  margin: auto;
+  width: 100%;
+}
+
+.orcamento2 {
+  font-family: "Montserrat";
+  font-weight: bold;
+  font-size: 1.5rem;
+  color: #2c1c04;
+  text-align: center;
+  padding: 1%;
+}
+
+.embreve{
+  color: #2c1c04;
+  display: flex;
+  margin: auto;
+}
+
 /* Footer */
 .fundo {
   display: flex;
