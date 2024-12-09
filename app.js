@@ -58,7 +58,7 @@ app.get('/checksenha', (req, res) => {
     res.render('checksenha', { pchecksenha: 'Nova Senha Cadastrada! - Ribeiro Planejados'});
 });
 app.get('/status', (req, res) => {
-    res.render('satus', { pstatus: 'Status - Ribeiro Planejados'});
+    res.render('status', { pstatus: 'Status - Ribeiro Planejados'});
 });
 app.use('/404', (req, res) => {
     res.render('404', { p404: 'Erro 404 - Ribeiro Planejados'});

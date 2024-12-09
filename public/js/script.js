@@ -123,3 +123,16 @@ AOS.init({
 
   // Retorno Login
 
+// status 
+
+function showDetails(order) {
+    const details = document.getElementById('details');
+    details.innerHTML = `
+      <h2>Detalhes do ${order}</h2>
+      <p>Status: <strong>${order.includes('001') ? 'Em Produção' : order.includes('002') ? 'Pendente' : 'Concluído'}</strong></p>
+      <p>Data do Pedido: 01/11/2024</p>
+      <p>Cliente: João da Silva</p>
+    `;
+    document.querySelectorAll('.status-item').forEach(item => item.classList.remove('active'));
+    event.target.classList.add('active');
+  }
