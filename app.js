@@ -81,7 +81,7 @@ app.post('/cadastro', function (req, res) {
 
         conexao.query(sql, [cpf_cnpj, nome_completo_cliente, email_cliente, celular_cadastro, senha_cadastro, novidades_email, novidades_sms], function(error,result){
             if(error) throw error;
-            res.send("Cliente " + nome_completo_cliente + " cadastrado com sucesso! " + result.insertId);
+            res.redirect("/");
         });
         
     });
